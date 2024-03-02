@@ -16,10 +16,6 @@ return new class extends Migration
             $table->string('nombre');
             $table->decimal('precio_venta', 10, 2)->nullable();
             $table->string('url_imagen')->nullable();
-            $table->unsignedBigInteger('existencia_id')->unique();//ver si debe ser unique
-
-            $table->foreign('existencia_id')->references('id')->on('existencias')
-                ->onUpdate('cascade')->onDelete('cascade');
                 
             $table->timestamps();
         });

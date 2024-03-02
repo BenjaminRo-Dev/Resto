@@ -15,7 +15,8 @@ class DatabaseSeeder extends Seeder
         Storage::deleteDirectory('productos');
         Storage::makeDirectory('productos');
 
-        Existencia::factory(7)->create();
+
+        
 
         $this->call([
             EstadoSeeder::class,
@@ -24,6 +25,7 @@ class DatabaseSeeder extends Seeder
             ProductoSeeder::class,
             UserSeeder::class,
         ]);
+        Existencia::factory(7)->create();
 
 
     }

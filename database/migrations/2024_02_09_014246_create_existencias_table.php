@@ -16,6 +16,11 @@ return new class extends Migration
             $table->integer('cantidad_actual');
             $table->integer('cantidad_min');
             $table->integer('cantidad_max');
+            $table->unsignedBigInteger('producto_id')->unique();
+
+            $table->foreign('producto_id')->references('id')->on('productos')
+                ->onUpdate('cascade')->onDelete('cascade');
+
             $table->timestamps();
         });
     }
