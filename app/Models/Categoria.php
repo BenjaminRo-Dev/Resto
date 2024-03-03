@@ -21,4 +21,23 @@ class Categoria extends Model
     {
         return $this->belongsToMany(Producto::class);
     }
+
+    //Relacion de uno a muchos con sesiones
+    public function sesiones()
+    {
+        return $this->hasMany(Sesion::class);
+    }
+
+    //Relacion de uno a muchos con egresos
+    public function egresos()
+    {
+        return $this->hasMany(Egreso::class);
+    }
+
+    //Relacion de uno a muchos con usuarios
+    public function usuarios()
+    {
+        return $this->hasMany(User::class);
+    }
+
 }

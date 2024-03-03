@@ -34,4 +34,20 @@ class Producto extends Model
         return $this->belongsToMany(Categoria::class);
     }
 
+    //Relacion de muchos a muchos con egresos
+    public function egresos()
+    {
+        return $this->belongsToMany(Egreso::class)
+            ->withPivot('cantidad', 'precio_unitario')
+            ->withTimestamps();
+    }
+
+    //Relacion de muchos a muchos con tickets
+    public function tickets()
+    {
+        return $this->belongsToMany(Ticket::class)
+            ->withPivot('cantidad', 'precio_unitario')
+            ->withTimestamps();
+    }
+
 }

@@ -15,4 +15,9 @@ class Estado extends Model
         return $this->hasMany(Producto::class);
     }
 
+    //Relación con usuarios: Un estado esta en uno a muchos usuarios
+    public function usuarios(){
+        return $this->hasMany(User::class);
+    }
+
 }
