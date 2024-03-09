@@ -14,6 +14,16 @@ class CategoriaSeeder extends Seeder
      */
     public function run(): void
     {
+        //Tipo sesion:
+        Categoria::create([
+            'nombre' => 'Punto de venta',
+            'tipo_id' => Tipo::where('nombre', 'Sesion')->first()->id,
+        ]);
+        Categoria::create([
+            'nombre' => 'Administracion',
+            'tipo_id' => Tipo::where('nombre', 'Sesion')->first()->id,
+        ]);
+
         //Tipo menu:
         Categoria::create([
             'nombre' => 'Bebidas',

@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('sesiones', function (Blueprint $table) {
             $table->id();
             $table->decimal('monto_inicial', 8, 2);
-            $table->decimal('monto_final', 8, 2);
+            $table->decimal('monto_final', 8, 2)->nullable();
             $table->dateTime('fecha_apertura');
             $table->dateTime('fecha_cierre')->nullable();
             $table->integer('numero_caja');

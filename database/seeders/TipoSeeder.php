@@ -14,6 +14,10 @@ class TipoSeeder extends Seeder
     public function run(): void
     {
         Tipo::create([
+            'nombre' => 'Sesion',
+        ]);
+
+        Tipo::create([
             'nombre' => 'Menu',
         ]);
         Tipo::create([
