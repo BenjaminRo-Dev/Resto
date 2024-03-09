@@ -13,6 +13,7 @@
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+        @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">
@@ -27,6 +28,13 @@
                 </header>
             @endif
 
+            @if (session('status'))
+                <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
+                    {{-- <strong class="font-bold">Success!</strong> --}}
+                    <span class="block sm:inline">{{ session('status') }}</span>
+                </div>
+            @endif
+            
             <!-- Page Content -->
             <main>
                 {{ $slot }}
